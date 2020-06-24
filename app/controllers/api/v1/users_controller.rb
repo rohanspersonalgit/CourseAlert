@@ -6,11 +6,11 @@ class Api::V1::UsersController < ApplicationController
   end
 
   def create
-    @check_user = User.where("email_address= ?",params[:email_address]).first
-    if(@check_user !=nil)
-      render json: "This userexists"
-      return
-    end
+    # @check_user = User.where("email_address= ?",params[:email_address]).first
+    # if(@check_user !=nil)
+    #   render json: "This userexists"
+    #   return
+    # end
     user = User.create!(user_params)
     if user
       render json: user
