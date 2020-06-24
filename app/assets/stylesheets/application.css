@@ -49,3 +49,31 @@
   width: 100%;
   opacity: 0.4;
 }
+
+/* h1.largetext {
+  background-color: lightgrey;
+  padding: 20px;
+}
+
+@media screen and (min-width: 601px) {
+  h1.largetext {
+    font-size: 360;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  h1.largetext {
+    font-size: 140px;
+  }
+} */
+
+
+@media screen and (min-width: 601px) {
+  img{
+    max-width: 75%;
+    height: 300px;
+    object-fit: contain; 
+
+  }
+}
+

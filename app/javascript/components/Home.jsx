@@ -1,9 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import {Container, Row, Col} from 'react-bootstrap/'
+import {Container, Image, Row, Col} from 'react-bootstrap/'
 import Typewriter from './typewriter'
 import Navbar from 'react-bootstrap/Navbar'
 import Signup from './Signup'
+import Photo from '../../assets/images/lecturephoto.png'
 import Nav from 'react-bootstrap/Nav'
 import Button from 'react-bootstrap/Button'
 export default () => (
@@ -20,6 +21,7 @@ export default () => (
   <Row>
     <Col><Typewriter>Helo</Typewriter></Col>
   </Row>
+  <Row><Image src={Photo} ></Image></Row>
   <Row><Button variant="primary" size="lg">
       Register Now
     </Button>

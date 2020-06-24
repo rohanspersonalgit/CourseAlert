@@ -3,6 +3,7 @@ import Form from 'react-bootstrap/Form';
 import { Link } from "react-router-dom";
 import Button from 'react-bootstrap/Button'
 import validator from 'validator'
+import photo from '../../assets/images/lecturephoto.png'
 class Signup extends React.Component {
     constructor(props){
         super(props)
@@ -43,13 +44,40 @@ class Signup extends React.Component {
         console.log(isValidPhoneNumber)
         if(isValidPhoneNumber){
             this.state.phoneSubText = ""
-           
+           lec
         }
         
     }
     handleSubmit(event){
-        console.log(("sdfs"))
-        console.log(event.target[0].value)
+        let course = event.target[3].value + " " + event.target[4].value + " " + event.target[5].value + ","
+        const createuser = {
+            name: event.target[0].value,
+            email_address: event.target[0].value,
+            password_digest: event.target[1].value,
+            phone_number: event.target[2].value,
+            courses: course, 
+            string: ""
+        }
+        const token = document.querySelector('meta[name="csrf-token"]').content;
+        console.log(createuser)
+        const requestOptions = {
+            method: 'post',
+            headers: {"X-CSRF-Token": token,
+            "Content-Type": "application/json"},
+            body: JSON.stringify(createuser)
+        }
+        console.log(requestOptions)
+        fetch('http://localhost:3000/api/v1/users/create',requestOptions)
+        .then(response => {
+            if (response.ok) {
+              return response.json();
+            }
+            throw new Error("Network response was not ok.");
+          })
+          //.then(response => this.props.history.push(`/user/${response.id}`)) uncoment to push to user profile 
+          .catch(error => console.log(error.message));
+    
+        
     }
     render() {
         // let i = 0; 

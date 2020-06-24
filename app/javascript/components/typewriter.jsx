@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Typist from 'react-typist'
-
 class Typewriter extends React.Component {
     constructor(props){
         super(props)
@@ -21,12 +20,13 @@ class Typewriter extends React.Component {
         console.log("lol")
     }
     render(){
-        return(
+        return(<div >
             <Typist>
-  <h1 white-space="nowrap">F** {this.state.text[this.state.current]} </h1>
-  <Typist.Backspace onTypingDone={this.texttyped} count={this.state.text[this.state.current].length} delay={200} />
-  <h1> {this.state.text[this.state.next]} </h1>
+  <h1  white-space="nowrap">F*** {this.state.text[this.state.current]} </h1>
+  <Typist.Backspace onTypingDone={this.texttyped} count={this.state.text[this.state.current].length + 1} delay={200} />
+  <h1 > {this.state.text[this.state.next]} </h1>
 </Typist>
+</div>
         )
     }
 }

@@ -5,9 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-4.times do |i|
-    User.create(
-        name: "test_user_#{i+1}",
-        courses:["CPSC 410 101", "CPSC 221 101", "COMM 203 101"]
-    )
-end
+# 4.times do |i|
+#     User.create(
+#         name: "test_user_#{i+1}",
+#         courses:["CPSC 410 101", "CPSC 221 101", "COMM 203 101"]
+#     )
+# end

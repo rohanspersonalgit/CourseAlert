@@ -20,7 +20,7 @@ attr_accessor :parse_page
 
 
     def scrape_url(url)
-        doc = HTTParty.get(url)
+        doc = HTTParty.get(url).body
         parse_page ||= Nokogiri::HTML(doc)
         table = parse_page.xpath("/html/body/div[2]/div[4]/table[4]")
         return parse_table(table)
