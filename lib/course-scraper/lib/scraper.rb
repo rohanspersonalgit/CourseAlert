@@ -1,5 +1,5 @@
-require 'HTTParty'
-require 'Nokogiri'
+require 'httparty'
+require 'nokogiri'
 Course = Struct.new(:subject, :course, :section)
 class Scraper
 

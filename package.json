@@ -1,6 +1,10 @@
 {
   "name": "course_alert",
   "private": true,
+  "engine": {
+    "npm": "6.4.2.1", 
+    "node": "14.4.0"
+  },
   "dependencies": {
     "@babel/preset-react": "^7.10.1",
     "@rails/actioncable": "^6.0.0",
