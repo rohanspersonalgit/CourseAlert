@@ -18,6 +18,10 @@ attr_accessor :parse_page
         puts data
     end
 
+    def scrape_course(subject, course, section)
+        data = scrape_url(get_url(subject,course,section))
+        puts(data)
+    end
 
     def scrape_url(url)
         doc = HTTParty.get(url).body

@@ -8,7 +8,8 @@ class Api::V1::SessionsController < ApplicationController
       render json: {
         status: :created, 
         logged_in: true, 
-        user: user
+        user: user,
+        session_id: session[:session_id]
       }
     else
      render json: {status: 401}

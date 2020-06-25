@@ -1,0 +1,2 @@
+class CourseNotificaiton < ApplicationRecord
+end

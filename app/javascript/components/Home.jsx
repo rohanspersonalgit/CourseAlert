@@ -22,10 +22,10 @@ export default () => (
     <Col><Typewriter>Helo</Typewriter></Col>
   </Row>
   <Row><Image src={Photo} ></Image></Row>
-  <Row><Button variant="primary" size="lg">
+  {/* <Row><Button variant="primary" size="lg">
       Register Now
     </Button>
-    </Row>
+    </Row> */}
     <Signup>sdfsd</Signup>
 
   {/* <Row><Signup>Lol</Signup></Row> */}
