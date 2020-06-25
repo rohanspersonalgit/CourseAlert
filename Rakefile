@@ -7,3 +7,9 @@ Rails.application.load_tasks
 task :default do
     puts 'Hello Rake'
   end
+
+begin
+    require 'rspec/core/rake_task'
+    RSpec::Core::RakeTask.new(:spec)
+rescue LoadError
+end

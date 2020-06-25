@@ -5,7 +5,6 @@ scraper = Scraper.new
 namespace :scrape_data do
   desc "TODO"
   task get_all_course_data_and_alert: :environment do
-    courses = []
     CourseNotificaiton.find_each do |course|
       course_data = scraper.scrape_course(course.subject, course.course_name, course.section)
 
