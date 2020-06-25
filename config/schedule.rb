@@ -18,7 +18,7 @@
 # end
 
 # Learn more: http://github.com/javan/whenever
-# set :output, "log/cron.log"
-# every 1.minute do
-#     command 'rake scrape_data:get_course_data'
-# end
+set :output, "log/cron.log"
+every 1.minute do
+    command 'rake scrape_data:get_all_course_data_and_alert'
+end

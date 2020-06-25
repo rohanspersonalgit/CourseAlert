@@ -21,6 +21,7 @@ attr_accessor :parse_page
     def scrape_course(subject, course, section)
         data = scrape_url(get_url(subject,course,section))
         puts(data)
+        return data
     end
 
     def scrape_url(url)

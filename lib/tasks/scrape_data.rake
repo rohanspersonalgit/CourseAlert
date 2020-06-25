@@ -1,12 +1,18 @@
 require_relative '../course-scraper/lib/scraper.rb'
 require_relative '../course-scraper/lib/users.rb'
-scraper = Scraper.new()
+require "textbot"
+scraper = Scraper.new
 namespace :scrape_data do
   desc "TODO"
-  task get_course_data: :environment do
+  task get_all_course_data_and_alert: :environment do
     courses = []
     CourseNotificaiton.find_each do |course|
-      scraper.scrape_course(course.subject, course.course_name, course.section)
+      course_data = scraper.scrape_course(course.subject, course.course_name, course.section)
+      phone_number = "+12056228085"
+      if course_data["Total Seats Remaining"] != "0"
+        message =  course_data["Total Seats Remaining"] + " "+ "Total Seats Remaining in " + course.subject + " " + course.course_name + " " + course.section 
+        Textbot.send_message(message, "+16048057254", phone_number)
+      end
     end
   end
   
