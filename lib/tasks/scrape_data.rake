@@ -18,9 +18,9 @@ namespace :scrape_data do
         course.phonenumbers.each do |number|
           Textbot.send_message(message, number, phone_number)
         end
-        logger.info phone_number + "alerted at " + Time.zone.now.strftime('%m/%d/%Y %H:%M %p') + " about " + course_name + "\n" 
+        logger.info(phone_number + "alerted at " + Time.zone.now.strftime('%m/%d/%Y %H:%M %p') + " about " + course_name + "\n")
       else
-        logger.info "checked at " + Time.zone.now.strftime('%m/%d/%Y %H:%M %p') + "\n" 
+        logger.info("checked at " + Time.zone.now.strftime('%m/%d/%Y %H:%M %p') + "\n") 
       end
     end
   end
