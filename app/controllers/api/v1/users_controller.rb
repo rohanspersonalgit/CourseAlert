@@ -21,9 +21,14 @@ class Api::V1::UsersController < ApplicationController
         user.destry()
         render json: "some error"
       end
-    rescue ActiveRecord::RecordNotFound => e
-      render json: e
+    rescue ActiveRecord::RecordInvalid => e
+      if e.message == 'Validation failed: Email has already been taken'
+        render json: e
+      else
+        render json: e
+      end
     rescue Exception => e
+      user.destroy()
       render json: e
     rescue
       render json: "some error"
@@ -48,14 +53,14 @@ class Api::V1::UsersController < ApplicationController
   def register_alerts(subject, course_name, section, number)
     course =  CourseNotificaiton.find_by(subject: subject, course_name: course_name, section: section)
     if course
-      course.phonenumbers << "," <<number
+      course.phonenumbers << number
       return course.save
     else
       course = CourseNotificaiton.new
       course.subject = subject 
       course.course_name = course_name 
       course.section = section
-      course.phonenumbers = number
+      course.phonenumbers = [number]
       return course.save
     end
   end

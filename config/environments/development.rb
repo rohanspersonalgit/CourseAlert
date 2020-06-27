@@ -44,7 +44,20 @@ Rails.application.configure do
 
   # Highlight code that triggered database queries in logs.
   config.active_record.verbose_query_logs = true
+  
+  #Self implemented logger
+  # if File.exist?("log/devevent.log")
+  #   puts('exists')
+  #   log_file = File.open("log/devevent.log", "a+")
+  # else
+  #   log_file = File.new("log/devevent.log", "w")
+  # end
+  # Rails.logger = Logger.new(log_file)
+  # Rails.logger.level = Logger::DEBUG
+  # Rails.logger.datetime_format = "%Y-%m-%d %H:%M:%S"
+  # config.logger =Logger.new(log_file)
 
+  # config.log_level = :debug
   # Debug mode disables concatenation and preprocessing of assets.
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
